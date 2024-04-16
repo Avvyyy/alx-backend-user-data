@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Basic Auth Implementation"""
 
 from flask import Flask, request
 from auth.auth import Auth
