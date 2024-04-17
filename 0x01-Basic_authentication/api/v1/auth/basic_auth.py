@@ -1,9 +1,11 @@
-#!/usr/bin/env python3
-"""Basic Auth Implementation"""
-
 from flask import Flask, request
 from .auth import Auth
 from typing import TypeVar
+from models.user import User
+
+#!/usr/bin/env python3
+"""Basic Auth Implementation"""
+
 
 class BasicAuth:
 	"""BasicAuth class"""
@@ -41,7 +43,6 @@ class BasicAuth:
 			return None
 		if user_pwd is None or not isinstance(user_pwd, str):
 			return None
-		from models.user import User
 		user = User.search({'email': user_email})
 		if user is None or not user.is_valid_password(user_pwd):
 			return None
